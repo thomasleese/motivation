@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D2C5C341F7E9B8E00703DAC /* MotivationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2C5C331F7E9B8E00703DAC /* MotivationView.h */; };
-		5D2C5C361F7E9B8E00703DAC /* MotivationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C5C351F7E9B8E00703DAC /* MotivationView.m */; };
+		5D8900CF1F7E9C9A004B613F /* MotivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8900CE1F7E9C9A004B613F /* MotivationView.swift */; };
+		5D8900D41F7E9DDE004B613F /* ConfigurationWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8900D21F7E9DDE004B613F /* ConfigurationWindowController.swift */; };
+		5D8900D51F7E9DDE004B613F /* ConfigurationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D8900D31F7E9DDE004B613F /* ConfigurationWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5D2C5C301F7E9B8E00703DAC /* Motivation.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Motivation.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D2C5C331F7E9B8E00703DAC /* MotivationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MotivationView.h; sourceTree = "<group>"; };
-		5D2C5C351F7E9B8E00703DAC /* MotivationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotivationView.m; sourceTree = "<group>"; };
 		5D2C5C371F7E9B8E00703DAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D8900CE1F7E9C9A004B613F /* MotivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationView.swift; sourceTree = "<group>"; };
+		5D8900D21F7E9DDE004B613F /* ConfigurationWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationWindowController.swift; sourceTree = "<group>"; };
+		5D8900D31F7E9DDE004B613F /* ConfigurationWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +50,10 @@
 		5D2C5C321F7E9B8E00703DAC /* Motivation */ = {
 			isa = PBXGroup;
 			children = (
-				5D2C5C331F7E9B8E00703DAC /* MotivationView.h */,
-				5D2C5C351F7E9B8E00703DAC /* MotivationView.m */,
 				5D2C5C371F7E9B8E00703DAC /* Info.plist */,
+				5D8900CE1F7E9C9A004B613F /* MotivationView.swift */,
+				5D8900D21F7E9DDE004B613F /* ConfigurationWindowController.swift */,
+				5D8900D31F7E9DDE004B613F /* ConfigurationWindow.xib */,
 			);
 			path = Motivation;
 			sourceTree = "<group>";
@@ -62,7 +65,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D2C5C341F7E9B8E00703DAC /* MotivationView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +100,7 @@
 				TargetAttributes = {
 					5D2C5C2F1F7E9B8E00703DAC = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D8900D51F7E9DDE004B613F /* ConfigurationWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D2C5C361F7E9B8E00703DAC /* MotivationView.m in Sources */,
+				5D8900D41F7E9DDE004B613F /* ConfigurationWindowController.swift in Sources */,
+				5D8900CF1F7E9C9A004B613F /* MotivationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +149,7 @@
 		5D2C5C381F7E9B8E00703DAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -199,6 +205,7 @@
 		5D2C5C391F7E9B8E00703DAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -247,12 +254,17 @@
 		5D2C5C3B1F7E9B8E00703DAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Motivation/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.Motivation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -260,12 +272,16 @@
 		5D2C5C3C1F7E9B8E00703DAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Motivation/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.Motivation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
