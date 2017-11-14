@@ -23,6 +23,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 contentView.addSubview(screenSaverView)
             }
         }
+
+        let configurationWindowController = ConfigurationWindowController()
+        configurationWindowController.showWindow(nil)
+        configurationWindowController.window!.makeKeyAndOrderFront(nil)
     }
 
 }

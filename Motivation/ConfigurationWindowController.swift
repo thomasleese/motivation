@@ -15,5 +15,10 @@ class ConfigurationWindowController: NSWindowController {
             window.sheetParent?.endSheet(window)
         }
     }
+
+    override func windowWillLoad() {
+        super.windowWillLoad()
+        Swift.print("widow will load")
+    }
     
 }

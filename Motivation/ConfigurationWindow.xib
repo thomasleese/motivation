@@ -8,7 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ConfigurationWindowController" customModule="Motivation" customModuleProvider="target">
             <connections>
-                <outlet property="window" destination="QvC-M9-y7g" id="yFe-qJ-2Tx"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="xmR-ZH-oUb"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
