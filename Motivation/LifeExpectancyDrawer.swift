@@ -33,8 +33,6 @@ class LifeExpectancyDrawer {
 
         var currentDay = 0
 
-        print(layout.xMargin, layout.yMargin)
-
         for yDot in 0..<layout.yDots {
             for xDot in 0..<layout.xDots {
                 let x = layout.xMargin + Double(xDot) * layout.dotSize
