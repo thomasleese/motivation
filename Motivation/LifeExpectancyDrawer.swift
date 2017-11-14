@@ -42,7 +42,7 @@ class LifeExpectancyDrawer {
 
                 NSRectFill(NSRect(x: x, y: y, width: width, height: height))
 
-                if currentDay > lifeExpectancy.daysSpent {
+                if currentDay > Int(ceil(lifeExpectancy.daysSpent)) {
                     return
                 }
                 currentDay += 1
@@ -51,11 +51,11 @@ class LifeExpectancyDrawer {
     }
 
     var daysSpentString: NSString {
-        return String(format: "%d days spent", lifeExpectancy.daysSpent) as NSString
+        return String(format: "%.6f days spent", lifeExpectancy.daysSpent) as NSString
     }
 
     var daysLeftString: NSString {
-        return String(format: "%d days left", lifeExpectancy.daysLeft) as NSString
+        return String(format: "%.6f days left", lifeExpectancy.daysLeft) as NSString
     }
 
     private func drawLabels() {
@@ -72,9 +72,11 @@ class LifeExpectancyDrawer {
             NSParagraphStyleAttributeName: paragraphStyle,
         ]
 
-        daysSpentString.draw(in: NSRect(x: 0.0, y: layout.availableHeight - (60.0 + layout.yMargin), width: 220.0, height: 50.0), withAttributes: attributes)
+        let w = 320.0
 
-        daysLeftString.draw(in: NSRect(x: layout.availableWidth - 220.0, y: layout.yMargin - 10, width: 220.0, height: 50.0), withAttributes: attributes)
+        daysSpentString.draw(in: NSRect(x: 0.0, y: layout.availableHeight - (60.0 + layout.yMargin), width: w, height: 50.0), withAttributes: attributes)
+
+        daysLeftString.draw(in: NSRect(x: layout.availableWidth - w, y: layout.yMargin - 10, width: w, height: 50.0), withAttributes: attributes)
     }
 
     private func drawMargins() {

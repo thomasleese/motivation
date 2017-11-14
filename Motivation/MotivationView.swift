@@ -43,18 +43,24 @@ class MotivationView: ScreenSaverView {
     }
 
     private func initialise() {
-        animationTimeInterval = 60
+        animationTimeInterval = 1
 
         if let date = Preferences().birthDate {
             dateOfBirth = date
         }
 
         NotificationCenter.default.addObserver(self, selector: #selector(birthDateDidChange), name: Preferences.birthDateDidChangeNotificationName, object: nil)
+
+        startAnimation()
     }
 
     @objc private func birthDateDidChange(notification: NSNotification?) {
         dateOfBirth = Preferences().birthDate!
-        setNeedsDisplay(self.bounds)
+        animateOneFrame()
+    }
+
+    override func animateOneFrame() {
+        needsDisplay = true
     }
 
     override func draw(_ rect: NSRect) {

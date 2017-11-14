@@ -19,17 +19,21 @@ class LifeExpectancy {
         self.dateOfBirth = dateOfBirth
     }
 
-    var totalDays: Int {
-        return Int((averageAgeAtDeath * daysInYear).rounded())
+    var totalDays: Double {
+        return (averageAgeAtDeath * daysInYear).rounded()
     }
 
-    var daysSpent: Int {
+    var daysSpent: Double {
         let today = Date()
-        return Calendar.current.dateComponents([.day], from: self.dateOfBirth, to: today).day!
+        return secondsToDays(seconds: Calendar.current.dateComponents([.second], from: self.dateOfBirth, to: today).second!)
     }
 
-    var daysLeft: Int {
+    var daysLeft: Double {
         return totalDays - daysSpent
+    }
+
+    private func secondsToDays(seconds: Int) -> Double {
+        return Double(seconds) / 60.0 / 60.0 / 24.0
     }
 
 }
