@@ -18,6 +18,8 @@
 		5D265A951FBAEEC90032E6E1 /* LifeExpectancyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D265A931FBAEEC90032E6E1 /* LifeExpectancyLayout.swift */; };
 		5D265A971FBAF2BE0032E6E1 /* LifeExpectancyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D265A961FBAF2BE0032E6E1 /* LifeExpectancyDrawer.swift */; };
 		5D265A981FBAF2BE0032E6E1 /* LifeExpectancyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D265A961FBAF2BE0032E6E1 /* LifeExpectancyDrawer.swift */; };
+		5D265A9A1FBB0A610032E6E1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D265A991FBB0A610032E6E1 /* Preferences.swift */; };
+		5D265A9B1FBB0A610032E6E1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D265A991FBB0A610032E6E1 /* Preferences.swift */; };
 		5D8900CF1F7E9C9A004B613F /* MotivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8900CE1F7E9C9A004B613F /* MotivationView.swift */; };
 		5D8900D41F7E9DDE004B613F /* ConfigurationWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8900D21F7E9DDE004B613F /* ConfigurationWindowController.swift */; };
 		5D8900D51F7E9DDE004B613F /* ConfigurationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D8900D31F7E9DDE004B613F /* ConfigurationWindow.xib */; };
@@ -32,6 +34,7 @@
 		5D265A901FBAEBBB0032E6E1 /* LifeExpectancy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeExpectancy.swift; sourceTree = "<group>"; };
 		5D265A931FBAEEC90032E6E1 /* LifeExpectancyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeExpectancyLayout.swift; sourceTree = "<group>"; };
 		5D265A961FBAF2BE0032E6E1 /* LifeExpectancyDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeExpectancyDrawer.swift; sourceTree = "<group>"; };
+		5D265A991FBB0A610032E6E1 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		5D2C5C301F7E9B8E00703DAC /* Motivation.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Motivation.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2C5C371F7E9B8E00703DAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D8900CE1F7E9C9A004B613F /* MotivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationView.swift; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 				5D265A901FBAEBBB0032E6E1 /* LifeExpectancy.swift */,
 				5D265A931FBAEEC90032E6E1 /* LifeExpectancyLayout.swift */,
 				5D265A961FBAF2BE0032E6E1 /* LifeExpectancyDrawer.swift */,
+				5D265A991FBB0A610032E6E1 /* Preferences.swift */,
 			);
 			path = Motivation;
 			sourceTree = "<group>";
@@ -214,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D265A8F1FBAEAB60032E6E1 /* ConfigurationWindowController.swift in Sources */,
+				5D265A9B1FBB0A610032E6E1 /* Preferences.swift in Sources */,
 				5D265A8E1FBAEA730032E6E1 /* MotivationView.swift in Sources */,
 				5D265A981FBAF2BE0032E6E1 /* LifeExpectancyDrawer.swift in Sources */,
 				5D265A821FBAE9FB0032E6E1 /* AppDelegate.swift in Sources */,
@@ -228,6 +233,7 @@
 			files = (
 				5D8900D41F7E9DDE004B613F /* ConfigurationWindowController.swift in Sources */,
 				5D265A911FBAEBBB0032E6E1 /* LifeExpectancy.swift in Sources */,
+				5D265A9A1FBB0A610032E6E1 /* Preferences.swift in Sources */,
 				5D8900CF1F7E9C9A004B613F /* MotivationView.swift in Sources */,
 				5D265A971FBAF2BE0032E6E1 /* LifeExpectancyDrawer.swift in Sources */,
 				5D265A941FBAEEC90032E6E1 /* LifeExpectancyLayout.swift in Sources */,
@@ -400,6 +406,7 @@
 				INFOPLIST_FILE = Motivation/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.Motivation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -418,6 +425,7 @@
 				INFOPLIST_FILE = Motivation/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.Motivation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

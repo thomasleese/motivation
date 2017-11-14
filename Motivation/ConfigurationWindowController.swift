@@ -10,10 +10,10 @@ import Cocoa
 
 class ConfigurationWindowController: NSWindowController {
 
-    override func windowDidLoad() {
-        super.windowDidLoad()
-
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    @IBAction func close(sender: AnyObject?) {
+        if let window = window {
+            window.sheetParent?.endSheet(window)
+        }
     }
     
 }

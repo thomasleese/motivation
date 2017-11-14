@@ -14,7 +14,11 @@ class MotivationView: ScreenSaverView {
         return ConfigurationWindowController()
     }()
 
-    let lifeExpectancy = LifeExpectancy(dateOfBirth: Date(timeIntervalSince1970: 785844000))
+    var dateOfBirth: Date? = Date(timeIntervalSince1970: 785844000)
+
+    var lifeExpectancy: LifeExpectancy {
+        return LifeExpectancy(dateOfBirth: dateOfBirth!)
+    }
 
     var lifeExpectancyLayout: LifeExpectancyLayout {
         return LifeExpectancyLayout(bounds: bounds, lifeExpectancy: lifeExpectancy)
@@ -26,18 +30,31 @@ class MotivationView: ScreenSaverView {
 
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
-
-        animationTimeInterval = 60
+        initialise()
     }
     
     override init?(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
-
-        animationTimeInterval = 60
+        initialise()
     }
 
-    override func viewDidMoveToSuperview() {
-        super.viewDidMoveToSuperview()
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    private func initialise() {
+        animationTimeInterval = 60
+
+        if let date = Preferences().birthDate {
+            dateOfBirth = date
+        }
+
+        NotificationCenter.default.addObserver(self, selector: #selector(birthDateDidChange), name: Preferences.birthDateDidChangeNotificationName, object: nil)
+    }
+
+    @objc private func birthDateDidChange(notification: NSNotification?) {
+        dateOfBirth = Preferences().birthDate!
+        setNeedsDisplay(self.bounds)
     }
 
     override func draw(_ rect: NSRect) {
