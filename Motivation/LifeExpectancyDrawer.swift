@@ -63,7 +63,7 @@ class LifeExpectancyDrawer {
     private func drawLabels() {
         labelColour.setStroke()
 
-        let font = NSFont(name: "Futura", size: 26)
+        let font = NSFont(name: "Futura", size: 22)
 
         let paragraphStyle = NSParagraphStyle.default().mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.alignment = .center
@@ -74,9 +74,9 @@ class LifeExpectancyDrawer {
             NSParagraphStyleAttributeName: paragraphStyle,
         ]
 
-        daysSpentString.draw(in: NSRect(x: 0, y: layout.bounds.height - 60, width: 260, height: 50), withAttributes: attributes)
+        daysSpentString.draw(in: NSRect(x: 0.0, y: layout.availableHeight - (60.0 + layout.yMargin), width: 220.0, height: 50.0), withAttributes: attributes)
 
-        daysLeftString.draw(in: NSRect(x: layout.bounds.width - 260, y: 0, width: 260, height: 50), withAttributes: attributes)
+        daysLeftString.draw(in: NSRect(x: layout.availableWidth - 220.0, y: layout.yMargin - 10, width: 220.0, height: 50.0), withAttributes: attributes)
     }
 
     private func drawMargins() {
