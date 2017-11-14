@@ -22,8 +22,8 @@ class LifeExpectancyLayout {
         return Int(bounds.width * bounds.height)
     }
 
-    var dotSize: Int {
-        return Int((Double(availableDots) / Double(lifeExpectancy.totalDays)).squareRoot().rounded())
+    var dotSize: Double {
+        return (Double(availableDots) / Double(lifeExpectancy.totalDays)).squareRoot().rounded()
     }
 
     var xDots: Int {
@@ -32,6 +32,14 @@ class LifeExpectancyLayout {
 
     var yDots: Int {
         return Int((bounds.height / CGFloat(dotSize)).rounded())
+    }
+
+    var xMargin: Double {
+        return (Double(xDots) * dotSize - Double(bounds.width)) / 2.0
+    }
+
+    var yMargin: Double {
+        return (Double(yDots) * dotSize - Double(bounds.height)) / 2.0
     }
 
 }

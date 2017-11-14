@@ -35,8 +35,8 @@ class LifeExpectancyDrawer {
 
         for yDot in 0...layout.yDots {
             for xDot in 0...layout.xDots {
-                let x = xDot * layout.dotSize
-                let y = Int(layout.bounds.height) - yDot * layout.dotSize
+                let x = layout.xMargin + Double(xDot) * layout.dotSize
+                let y = Double(layout.bounds.height) - (layout.yMargin + Double(yDot) * layout.dotSize)
                 let width = layout.dotSize
                 let height = layout.dotSize
 
