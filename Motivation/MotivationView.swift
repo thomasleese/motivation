@@ -13,14 +13,26 @@ class MotivationView: ScreenSaverView {
     private lazy var configurationWindowController: NSWindowController = {
         return ConfigurationWindowController()
     }()
-    
+
+    let lifeExpectancy = LifeExpectancy(dateOfBirth: Date(timeIntervalSince1970: 785844000))
+
+    var lifeExpectancyLayout: LifeExpectancyLayout {
+        return LifeExpectancyLayout(bounds: bounds, lifeExpectancy: lifeExpectancy)
+    }
+
+    var lifeExpectancyDrawer: LifeExpectancyDrawer {
+        return LifeExpectancyDrawer(lifeExpectancy: lifeExpectancy, layout: lifeExpectancyLayout)
+    }
+
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
+
         animationTimeInterval = 60
     }
     
     override init?(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
+
         animationTimeInterval = 60
     }
 
@@ -28,27 +40,10 @@ class MotivationView: ScreenSaverView {
         super.viewDidMoveToSuperview()
     }
 
-    override func startAnimation() {
-        super.startAnimation()
-    }
-    
-    override func stopAnimation() {
-        super.stopAnimation()
-    }
-    
     override func draw(_ rect: NSRect) {
-        NSColor.red.setFill()
-        NSRectFill(self.bounds)
-        NSColor.black.set()
-        
-        let hello:NSString = "hello SWIFT screen saver plugin"
-        hello.draw(at: NSPoint(x: 100.0, y: 200.0), withAttributes:nil)
+        lifeExpectancyDrawer.draw()
     }
-    
-    override func animateOneFrame() {
-        super.animateOneFrame()
-    }
-    
+
     override func hasConfigureSheet() -> Bool {
         return true
     }
