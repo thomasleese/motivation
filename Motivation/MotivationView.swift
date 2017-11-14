@@ -24,6 +24,10 @@ class MotivationView: ScreenSaverView {
         animationTimeInterval = 60
     }
 
+    override func viewDidMoveToSuperview() {
+        super.viewDidMoveToSuperview()
+    }
+
     override func startAnimation() {
         super.startAnimation()
     }
