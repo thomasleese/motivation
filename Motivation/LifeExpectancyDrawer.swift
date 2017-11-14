@@ -33,8 +33,10 @@ class LifeExpectancyDrawer {
 
         var currentDay = 0
 
-        for yDot in 0...layout.yDots {
-            for xDot in 0...layout.xDots {
+        print(layout.xMargin, layout.yMargin)
+
+        for yDot in 0..<layout.yDots {
+            for xDot in 0..<layout.xDots {
                 let x = layout.xMargin + Double(xDot) * layout.dotSize
                 let y = Double(layout.bounds.height) - (layout.yMargin + Double(yDot) * layout.dotSize)
                 let width = layout.dotSize
@@ -77,10 +79,26 @@ class LifeExpectancyDrawer {
         daysLeftString.draw(in: NSRect(x: layout.bounds.width - 260, y: 0, width: 260, height: 50), withAttributes: attributes)
     }
 
+    private func drawMargins() {
+        NSColor.black.setFill()
+
+        let w = layout.availableWidth
+        let h = layout.availableHeight
+        let xm = layout.xMargin
+        let ym = layout.yMargin
+
+        NSRectFill(NSRect(x: 0.0, y: 0.0, width: xm, height: h))
+        NSRectFill(NSRect(x: w - xm, y: 0.0, width: xm, height: h))
+
+        NSRectFill(NSRect(x: 0.0, y: 0.0, width: w, height: ym))
+        NSRectFill(NSRect(x: 0.0, y: h - ym, width: w, height: ym))
+    }
+
     func draw() {
         clearBackground()
         drawDots()
         drawLabels()
+        drawMargins()
     }
 
 }

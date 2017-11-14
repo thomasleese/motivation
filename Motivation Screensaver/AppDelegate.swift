@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let screenSaverView = screenSaverView {
             if let contentView = window.contentView {
-                window.setFrame(NSRect(x: 10, y: 10, width: 1000, height: 800), display: true)
+                window.setFrame(NSRect(x: 10, y: 10, width: 997, height: 785), display: true)
                 screenSaverView.frame = contentView.bounds
                 contentView.addSubview(screenSaverView)
             }

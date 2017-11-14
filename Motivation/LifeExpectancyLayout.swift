@@ -18,28 +18,36 @@ class LifeExpectancyLayout {
         self.lifeExpectancy = lifeExpectancy
     }
 
+    var availableWidth: Double {
+        return Double(bounds.width)
+    }
+
+    var availableHeight: Double {
+        return Double(bounds.height)
+    }
+
     var availableDots: Int {
-        return Int(bounds.width * bounds.height)
+        return Int(availableWidth * availableHeight)
     }
 
     var dotSize: Double {
-        return (Double(availableDots) / Double(lifeExpectancy.totalDays)).squareRoot().rounded()
+        return floor((Double(availableDots) / Double(lifeExpectancy.totalDays)).squareRoot())
     }
 
     var xDots: Int {
-        return Int((bounds.width / CGFloat(dotSize)).rounded())
+        return Int(floor(availableWidth / dotSize))
     }
 
     var yDots: Int {
-        return Int((bounds.height / CGFloat(dotSize)).rounded())
+        return Int(ceil(Double(lifeExpectancy.totalDays) / Double(xDots)))
     }
 
     var xMargin: Double {
-        return (Double(xDots) * dotSize - Double(bounds.width)) / 2.0
+        return (availableWidth - Double(xDots) * dotSize) / 2.0
     }
 
     var yMargin: Double {
-        return (Double(yDots) * dotSize - Double(bounds.height)) / 2.0
+        return (availableHeight - Double(yDots) * dotSize) / 2.0
     }
 
 }
