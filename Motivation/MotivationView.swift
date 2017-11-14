@@ -14,7 +14,7 @@ class MotivationView: ScreenSaverView {
         return ConfigurationWindowController()
     }()
 
-    var dateOfBirth: Date? = Date(timeIntervalSince1970: 785844000)
+    var dateOfBirth: Date? = Date(timeIntervalSince1970: 785845920)
 
     var lifeExpectancy: LifeExpectancy {
         return LifeExpectancy(dateOfBirth: dateOfBirth!)
@@ -50,8 +50,6 @@ class MotivationView: ScreenSaverView {
         }
 
         NotificationCenter.default.addObserver(self, selector: #selector(birthDateDidChange), name: Preferences.birthDateDidChangeNotificationName, object: nil)
-
-        startAnimation()
     }
 
     @objc private func birthDateDidChange(notification: NSNotification?) {

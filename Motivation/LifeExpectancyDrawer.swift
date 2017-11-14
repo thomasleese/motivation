@@ -51,17 +51,17 @@ class LifeExpectancyDrawer {
     }
 
     var daysSpentString: NSString {
-        return String(format: "%.6f days spent", lifeExpectancy.daysSpent) as NSString
+        return String(format: "%.5f days spent", lifeExpectancy.daysSpent) as NSString
     }
 
     var daysLeftString: NSString {
-        return String(format: "%.6f days left", lifeExpectancy.daysLeft) as NSString
+        return String(format: "%.5f days left", lifeExpectancy.daysLeft) as NSString
     }
 
     private func drawLabels() {
         labelColour.setStroke()
 
-        let font = NSFont(name: "Futura", size: 22)
+        let font = NSFont(name: "Futura", size: 23)
 
         let paragraphStyle = NSParagraphStyle.default().mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.alignment = .center
@@ -72,11 +72,11 @@ class LifeExpectancyDrawer {
             NSParagraphStyleAttributeName: paragraphStyle,
         ]
 
-        let w = 320.0
+        let w = 300.0
 
         daysSpentString.draw(in: NSRect(x: 0.0, y: layout.availableHeight - (60.0 + layout.yMargin), width: w, height: 50.0), withAttributes: attributes)
 
-        daysLeftString.draw(in: NSRect(x: layout.availableWidth - w, y: layout.yMargin - 10, width: w, height: 50.0), withAttributes: attributes)
+        daysLeftString.draw(in: NSRect(x: layout.availableWidth - w, y: layout.yMargin - 5, width: w, height: 50.0), withAttributes: attributes)
     }
 
     private func drawMargins() {
